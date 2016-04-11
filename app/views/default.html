@@ -1,0 +1,27 @@
+<h2 class="page-title">Github Issues List</h2>
+<span class="self-paging">View
+    <select ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+        <option>1</option><option>5</option><option>10</option><option>20</option><option>50</option>
+    </select> records at a time.
+</span>
+<uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged(currentPage)" max-size="maxSize" class="pagination pull-right" num-pages="numPages" items-per-page="itemsPerPage" boundary-link-numbers="true" rotate="false"></uib-pagination>
+
+<hr/>
+<ul class="list-group">
+    <li class="list-group-header">
+        <strong>Total: {{issues.length}} issues</strong>
+    </li>
+    <li class="list-group-item repeat-item" ng-repeat="issue in issues.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" >
+        <div class="avatar">
+            <img class="img-circle center-block" ng-src="{{issue.user.avatar_url}}" width="60" />
+            <p class="name"><small><a href="{{issue.user.html_url}}" target="_blank"><b>{{issue.user.login}}</b></a></small></p>
+        </div>
+        <div class="issue-content">
+            <h4><a class="issue-link" href="javascript:;" ng-click="navigate(issue.number)">{{issue.title}}</a><span class="issue-label">   #{{issue.number}}</span></h4>
+            <span ng-repeat="label in issue.labels">
+                <span class="label" ng-style="{'background-color':'#'+label.color}">{{label.name}}</span>
+            </span>
+            <div ng-bind-html="issue.body | markdown | short"></div>
+        </div>
+    </li>
+</ul>

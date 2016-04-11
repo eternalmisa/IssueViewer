@@ -1,0 +1,66 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.self-paging {
+    font-size: medium;
+}
+.list-group-header {
+    padding-left: 20px;
+    background-color: #eee;
+    line-height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: medium;
+}
+
+.list-group-item {
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.list-group-item .avatar {
+    position: absolute;
+    left: 15px;
+    top: 7px;
+    width: 80px;
+}
+
+.list-group-item .issue-content {
+    margin-left: 20px;
+}
+
+.list-group-item:hover {
+    background-color: #f5f5f5;
+}
+
+.issue-link {
+    color: #333;
+}
+.issue-label {
+    color: gray;
+}
+
+.issue-info {
+    font-size: medium;
+}
+
+.issue-link:hover {
+    text-decoration: none;
+}
+
+.badge.closed {
+    background-color: #bd2c00;
+}
+.badge.open {
+    background-color: #6cc644;
+}
+ul {
+    list-style-type: none;
+}
+.name {
+    text-align: center;
+}
+.page-title {
+    text-align: center;
+}

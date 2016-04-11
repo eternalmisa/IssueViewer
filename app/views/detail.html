@@ -1,0 +1,63 @@
+<button class="btn btn-primary" ng-click="backToList()">Back To List</button>
+<h2 class="list-group-item-heading">{{issue.title}}<span class="issue-label">   #{{issue.number}}</span></h2>
+<span class="issue-info">
+    <span class="badge" ng-class="issue.state">{{issue.state}}</span>
+    <span class="list-group-item-text text-muted"><small><a href="{{issue.user.html_url}}" target="_blank"><b>{{issue.user.login}}</b></a> created this issue on {{issue.created_at}} *{{comments.length}} comments</small></span>
+</span>
+<hr/>
+<div class="row issue-summary">
+    <div class="col-lg-1">
+        <img class="avatar img-thumbnail" ng-src="{{issue.user.avatar_url}}" width="80" />
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="{{issue.user.html_url}}" target="_blank"><b>{{issue.user.login}}</b></a></div>
+            <div class="panel-body">
+                <div ng-bind-html="issue.body | markdown"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="issue-label">
+            <label>Labels</label>
+            <div ng-if="issue.labels.length == 0">None yet</div>
+            <div ng-if="issue.labels.length != 0">
+                <span ng-repeat="label in issue.labels">
+                    <span class="label" ng-style="{'background-color':'#'+label.color}">{{label.name}}</span>
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="issue-label issue-milestone">
+            <label>Milestone</label>
+            <div ng-if="issue.milestone == null">No milestone</div>
+            <div ng-if="issue.milestone != null">{{issue.milestone}}</div>
+        </div>
+        <hr>
+        <div class="issue-label issue-assignee">
+            <label>Assignee</label>
+            <div ng-if="issue.assignee == null">No one assigned</div>
+            <div ng-if="issue.assignee != null">{{issue.assignee}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row issue-comments" ng-if="comments.length != 0">
+    <ul class="list-group">
+        <li class="repeat-item" ng-repeat="comment in comments" >
+            <div class="col-lg-1">
+                <img class="avatar img-thumbnail" ng-src="{{comment.user.avatar_url}}" width="80" />
+            </div>
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="list-group-item-text text-muted"><small><a href="{{comment.user.html_url}}" target="_blank"><b>{{comment.user.login}}</b></a> opened on {{comment.created_at}}</small></p>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-bind-html="comment.body | markdown"></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

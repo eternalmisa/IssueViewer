@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body ng-app="issueViewerApp">
+  <div class="container">
+    <div ng-view=""></div>
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="assets/ui-bootstrap-tpls-1.3.1.min.js"></script>
+  <script src="assets/marked.js"></script>
+  <script src="assets/twitter-autoLink.js"></script>
+
+  <script src="javascripts/app.js"></script>
+  <script src="javascripts/services/IssueList.js"></script>
+  <script src="javascripts/services/Issue.js"></script>
+  <script src="javascripts/controllers/default.js"></script>
+  <script src="javascripts/controllers/detail.js"></script>
+  <script src="javascripts/filters/filter.js"></script>
+</body>
+</html>
