@@ -76,7 +76,9 @@ and #(hashtag)
 ***javascripts/controllers/detail.js:*** the controller logic: DetailCtrl (query and display a sepcific issue)        
 ***javascripts/filters/filter.js:*** custom interpolation filter: format the value of issue content for displaying in view)        
 ***javascripts/services/Issue.js:*** call API "https://api.github.com/repos/npm/npm/issues/:number/:comments" to get the summary and comments of one sepecific issue.        
-***javascripts/services/IssueList.js:*** call API "https://api.github.com/repos/npm/javascripts/app.js: main application module, route between view/controller.        
+***javascripts/services/IssueList.js:*** call API "https://api.github.com/repos/npm/       
+***javascripts/app.js:*** main application module, route between view/
+controller.        
 ***stylesheets/style.css:*** the style of whole project (lots of same tags in default.html and detail.html, so I put all css in one file.)        
 ***views/default.html:*** the partial template to display the issue list. Default Page.        
 ***views/detail.html:*** the partial template to display the detail of one issue. Detail Page.        
